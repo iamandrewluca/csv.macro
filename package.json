@@ -1,0 +1,96 @@
+{
+  "name": "csv.macro",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "es",
+    "lib",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "build": "hsu-scripts build src",
+    "test": "NODE_ENV='test' jest --coverage",
+    "test:watch": "npm run test -- --watch",
+    "flow": "flow",
+    "flow-coverage": "hsu-scripts flow --threshold 70",
+    "eslint": "eslint ./",
+    "format": "prettier --write '**/*.{js,json,md,css,yaml,yml}' '*.{js,json,md,css,yaml,yml}'",
+    "changelog": "conventional-changelog --infile ./CHANGELOG.md --same-file --release-count 0 --output-unreleased"
+  },
+  "dependencies": {
+    "babel-plugin-macros": "^2.6.1",
+    "csv-parse": "^4.6.3"
+  },
+  "devDependencies": {
+    "babel-plugin-tester": "^7.0.1",
+    "codecov": "3.2.0",
+    "conventional-changelog-cli": "2.0.12",
+    "eslint": "5.14.1",
+    "flow-bin": "0.93.0",
+    "hsu-scripts": "1.0.7",
+    "husky": "1.3.1",
+    "jest": "24.1.0",
+    "lint-staged": "8.1.4",
+    "prettier": "1.16.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib/",
+      "<rootDir>/es/",
+      "<rootDir>/src/__tests__/flow.test.js"
+    ],
+    "resetMocks": true,
+    "resetModules": true
+  },
+  "babel": {
+    "presets": [
+      "./node_modules/hsu-scripts/babel.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/hsu-scripts/eslint.js"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,json,md,css,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "description": "Compile CSV content to JSON at build-time with babel-plugin-macros.",
+  "author": "Andrew Luca <thendrluca@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamandrewluca/csv.macro/issues",
+    "email": "thendrluca@gmail.com"
+  },
+  "homepage": "https://github.com/iamandrewluca/csv.macro#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamandrewluca/csv.macro.git"
+  },
+  "keywords": [
+    "babel-plugin-macros",
+    "babel-plugin-macro",
+    "babel-macros",
+    "babel-macro",
+    "babel-plugin",
+    "macro",
+    "csv",
+    "csv-macro"
+  ]
+}

@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros [loader] should work with relative path: [loader] should work with relative path 1`] = `
+
+import { loader } from 'csv.macro';
+const jsonData = loader('../__tests__/fixtures/data.csv');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const jsonData = [{
+  "id": "1",
+  "username": "andrew",
+  "email": "andrew@example.com"
+}, {
+  "id": "2",
+  "username": "luca",
+  "email": "luca@example.com"
+}];
+
+`;
+
+exports[`macros [loader] with absolute path and NODE_PATH: [loader] with absolute path and NODE_PATH 1`] = `
+
+import { loader } from 'csv.macro';
+const jsonData = loader('__tests__/fixtures/data.csv');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const jsonData = [{
+  "id": "1",
+  "username": "andrew",
+  "email": "andrew@example.com"
+}, {
+  "id": "2",
+  "username": "luca",
+  "email": "luca@example.com"
+}];
+
+`;
+
+exports[`macros [loader] with absolute path and jsconfig include property: [loader] with absolute path and jsconfig include property 1`] = `
+
+import { loader } from 'csv.macro';
+const jsonData = loader('__tests__/fixtures/data.csv');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const jsonData = [{
+  "id": "1",
+  "username": "andrew",
+  "email": "andrew@example.com"
+}, {
+  "id": "2",
+  "username": "luca",
+  "email": "luca@example.com"
+}];
+
+`;
+
+exports[`macros [loader] with absolute path: [loader] with absolute path 1`] = `
+
+import { loader } from 'csv.macro';
+const jsonData = loader('src/__tests__/fixtures/data.csv');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const jsonData = [{
+  "id": "1",
+  "username": "andrew",
+  "email": "andrew@example.com"
+}, {
+  "id": "2",
+  "username": "luca",
+  "email": "luca@example.com"
+}];
+
+`;
+
+exports[`macros [loader] with data: [loader] with data 1`] = `
+
+import { loader } from 'csv.macro';
+const jsonData = loader('./fixtures/data.csv');
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const jsonData = [{
+  "id": "1",
+  "username": "andrew",
+  "email": "andrew@example.com"
+}, {
+  "id": "2",
+  "username": "luca",
+  "email": "luca@example.com"
+}];
+
+`;

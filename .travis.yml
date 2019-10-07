@@ -1,0 +1,20 @@
+sudo: false
+language: node_js
+node_js:
+  - '11.10.0'
+
+install:
+  - npm install
+
+script:
+  - npm run eslint
+  - npm run test
+  - npm run flow-coverage
+  - npm run build
+
+after_success:
+  - ./node_modules/.bin/codecov
+
+cache:
+  directories:
+    - node_modules
