@@ -18,6 +18,8 @@ $ npm install csv.macro
 
 _Note: You'll need to install and configure [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros) if you haven't already._
 
+_Note: It works by default is using `create-react-app`._
+
 ## Usage
 
 ### `loader`
